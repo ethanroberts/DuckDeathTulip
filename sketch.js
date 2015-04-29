@@ -511,9 +511,6 @@ function draw() {
 				tulipIdleDir *= -1;
 			}
 			tulipRot = -accelerationZ;
-			if (tulipRot >= 40) {
-				tulipRot = 40;
-			}
 
 			if (tulipIdleDir == 1) {
 				tulipIdleAnimPoint++;
