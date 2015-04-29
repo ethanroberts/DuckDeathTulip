@@ -214,7 +214,7 @@ function draw() {
 				plxTreeY = 0;
 			}
 
-		image(pondImg, canvasCenterX - 100, windowHeight + 300 - plxTreeY, 800,600);
+		image(pondImg, canvasCenterX - 300, windowHeight + 300 - plxTreeY, 800,500);
 		image(treeImg, windowWidth - 300, windowHeight + 100 - plxTreeY);
 	}
 
