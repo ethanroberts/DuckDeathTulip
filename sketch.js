@@ -215,6 +215,7 @@ function draw() {
 			}
 
 		image(pondImg, canvasCenterX - 300, windowHeight + 300 - plxTreeY, 800,500);
+		image(death_HeadImg_05, windowWidth - 280, windowHeight - 470 - plxTreeY, 400,400);
 		image(treeImg, windowWidth - 300, windowHeight + 100 - plxTreeY);
 	}
 
