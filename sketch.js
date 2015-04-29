@@ -510,12 +510,12 @@ function draw() {
 			if (tulipIdleAnimPoint == tulipIdleMag || tulipIdleAnimPoint == 0) {
 				tulipIdleDir *= -1;
 			}
-			tulipRot = accelerationZ*2;
-			if (tulipRot <= -20) {
-				tulipRot = -20;
+			tulipRot = accelerationZ;
+			if (tulipRot <= -40) {
+				tulipRot = -40;
 			}
-			if (tulipRot >= 20) {
-				tulipRot = 20;
+			if (tulipRot >= 40) {
+				tulipRot = 40;
 			}
 
 			if (tulipIdleDir == 1) {
