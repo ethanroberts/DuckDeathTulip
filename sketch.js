@@ -209,8 +209,8 @@ function draw() {
 	//Tree Scene
 	if (treeScene) {
 
-		var plxTreeY = accelerationX/layer_03_yOffset*20;
-			if(accelerationX < 0) {
+		var plxTreeY = accelerationY/layer_03_yOffset*50;
+			if(accelerationY < 0) {
 				plxTreeY = 0;
 			}
 
