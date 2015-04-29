@@ -443,13 +443,13 @@ function draw() {
 
 		//Paralax Layers
 			//X Offset
-		var plxLayerX_01 = mouseX/layer_01_xOffset;
-		var plxLayerX_02 = mouseX/layer_02_xOffset;
-		var plxLayerX_03 = mouseX/layer_03_xOffset;
-		var plxLayerX_04 = mouseX/layer_04_xOffset;
+		var plxLayerX_01 = accelerationX/layer_01_xOffset;
+		var plxLayerX_02 = accelerationX/layer_02_xOffset;
+		var plxLayerX_03 = accelerationX/layer_03_xOffset;
+		var plxLayerX_04 = accelerationX/layer_04_xOffset;
 			//Y Offset
-		var plxLayerY_01 = mouseY/layer_01_yOffset;
-		var plxLayerY_03 = mouseY/layer_03_yOffset;
+		var plxLayerY_01 = accelerationY/layer_01_yOffset;
+		var plxLayerY_03 = accelerationY/layer_03_yOffset;
 
 		image(SnowFallImg_01, canvasCenterX + plxLayerX_04-250, canvasCenterY + plxLayerY_01-250, windowWidth + 500, windowHeight + 500); //Snow Layer 1 (Far)
 		image(death_SittingImg_02,canvasCenterX + plxLayerX_01,windowHeight-400); //Death
