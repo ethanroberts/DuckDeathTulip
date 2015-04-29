@@ -208,7 +208,10 @@ function draw() {
 
 	//Tree Scene
 	if (treeScene) {
-		image(treeImg, windowWidth - 300, windowHeight);
+
+		var plxTreeY = accelerationX/layer_03_yOffset*20;
+
+		image(treeImg, windowWidth - 300, windowHeight + 100 + plxTreeY);
 	}
 
 	//Wind Scene
