@@ -50,10 +50,13 @@ var SnowFallImg_02;
 var SnowFallImg_03;
 var SnowFall_MotionBlurImg;
 var tulipImg;
+var treeImg;
+var pondImg;
 
 //Scenes ====================================================================================================
+var treeScene = true;
 var windScene = false;
-var snowScene = true;
+var snowScene = false;
 
 //Transformations ====================================================================================================
 	//Canvas
@@ -177,6 +180,8 @@ function preload() {
 	SnowFallImg_03 = loadImage("src/Textures/SnowFall_03.png");
 	SnowFall_MotionBlurImg = loadImage("src/Textures/SnowFall_MotionBlur.png");
 	tulipImg = loadImage("src/Misc/Tulip.png");
+	treeImg = loadImage("src/Misc/Tree.png");
+	pondImg = loadImage("src/Misc/Pond.png");
 }
 
 function setup() {
@@ -200,6 +205,11 @@ function setup() {
 
 function draw() {
 	background(35,30,255);
+
+	//Tree Scene
+	if (treeScene) {
+		image(treeImg, windowWidth - 300, windowHeight);
+	}
 
 	//Wind Scene
 	if (windScene) {
