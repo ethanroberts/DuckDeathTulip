@@ -443,10 +443,10 @@ function draw() {
 
 		//Paralax Layers
 			//X Offset
-		var plxLayerX_01 = accelerationX/layer_01_xOffset;
-		var plxLayerX_02 = accelerationX/layer_02_xOffset;
-		var plxLayerX_03 = accelerationX/layer_03_xOffset;
-		var plxLayerX_04 = accelerationX/layer_04_xOffset;
+		var plxLayerX_01 = accelerationX/layer_01_xOffset*10;
+		var plxLayerX_02 = accelerationX/layer_02_xOffset*10;
+		var plxLayerX_03 = accelerationX/layer_03_xOffset*10;
+		var plxLayerX_04 = accelerationX/layer_04_xOffset*10;
 			//Y Offset
 		var plxLayerY_01 = accelerationY/layer_01_yOffset;
 		var plxLayerY_03 = accelerationY/layer_03_yOffset;
