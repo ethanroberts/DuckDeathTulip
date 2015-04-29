@@ -14,7 +14,9 @@ var duck_DeadImg;
 var duck_TorsoFrontImg;
 var duck_TorsoSideImg;
 var duck_NeckImg;
+var duck_NeckLeftImg;
 var duck_HeadImg;
+var duck_HeadLeftImg;
 var duck_FootLeftImg;
 var duck_FootRightImg;
 var duck_WingImg_01;
@@ -143,7 +145,9 @@ function preload() {
 	duck_TorsoFrontImg = loadImage("src/Duck/BodyParts/Duck_Torso_Front.png");
 	duck_TorsoSideImg = loadImage("src/Duck/BodyParts/Duck_Torso_Side.png");
 	duck_NeckImg = loadImage("src/Duck/BodyParts/Duck_Neck.png");
+	duck_NeckLeftImg = loadImage("src/Duck/BodyParts/Duck_Neck_left.png");
 	duck_HeadImg = loadImage("src/Duck/BodyParts/Duck_Head.png");
+	duck_HeadLeftImg = loadImage("src/Duck/BodyParts/Duck_Head_Left.png");
 	duck_FootLeftImg = loadImage("src/Duck/BodyParts/Duck_Foot_Left.png");
 	duck_FootRightImg = loadImage("src/Duck/BodyParts/Duck_Foot_Right.png");
 	duck_WingImg_01 = loadImage("src/Duck/BodyParts/Duck_Wing_01.png");
@@ -213,9 +217,23 @@ function draw() {
 			if(accelerationY < 0) {
 				plxTreeY = 0;
 			}
+		var duck_NeckLeftx = windowWidth-380;
+		var duck_NeckLefty = windowHeight-430-plxTreeY;
 
 		image(pondImg, canvasCenterX - 300, windowHeight + 300 - plxTreeY, 800,500);
-		image(death_HeadImg_05, windowWidth - 280, windowHeight - 470 - plxTreeY, 400,400);
+		push();
+		translate(windowWidth - 280, windowHeight - 470 - plxTreeY);
+		image(death_HeadImg_05, 0,0, 400,400);
+		pop();
+		push();
+		translate(duck_NeckLeftx, duck_NeckLefty);
+		image(duck_NeckLeftImg, 0,0, 400,400);
+		pop();
+		push();
+		translate(duck_NeckLeftx,duck_NeckLefty);
+		translate(7,-120);
+		image(duck_HeadLeftImg, 0,0, 400,400);
+		pop();
 		image(treeImg, windowWidth - 300, windowHeight + 100 - plxTreeY);
 	}
 
