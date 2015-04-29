@@ -510,27 +510,19 @@ function draw() {
 			if (tulipIdleAnimPoint == tulipIdleMag || tulipIdleAnimPoint == 0) {
 				tulipIdleDir *= -1;
 			}
-			tulipRot += tulipIdleDir/20 + (accelerationZ*10);
+			tulipRot += tulipIdleDir/20 + (accelerationZ*2);
+			if (tulipRot <= -20) {
+				tulipRot = -20;
+			}
+			if (tulipRot >= 20) {
+				tulipRot = 20;
+			}
 
 			if (tulipIdleDir == 1) {
 				tulipIdleAnimPoint++;
 			}
 			else if (tulipIdleDir == -1) {
 				tulipIdleAnimPoint--;
-			}
-		}
-				//Blow Left Animation
-		if(tulipAnimState == 1) {
-			if (tulipBLAnimPoint == tulipBLMag || tulipBLAnimPoint == -70) {
-				tulipBLDir *= -1;
-			}
-			tulipRot += tulipBLDir;
-
-			if (tulipBLDir == -1) {
-				tulipBLAnimPoint++;
-			}
-			else if (tulipBLDir == 1) {
-				tulipBLAnimPoint--;
 			}
 		}
 	}	// -/Draw
