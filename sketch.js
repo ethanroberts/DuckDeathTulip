@@ -191,7 +191,7 @@ function setup() {
 	canvasCenterY = windowHeight/2;
 		//Duck
 			//Wind Scene
-	duckPinXw = canvasCenterX-100;
+	duckPinXw = canvasCenterX-75;
 	duckPinYw = windowHeight-200;
 
 	background(90);
@@ -205,36 +205,36 @@ function draw() {
 	if (windScene) {
 		//Character Pin Points (For Animating Characters)
 			//Death
-		var deathPinX = canvasCenterX+150;	//Torso X
-		var deathPinY = windowHeight-450;	//Torso Y
-			var deathPinSLx = deathPinX+50;		//Left Shoulder X
-			var deathPinSLy = deathPinY-230;	//Left Shoulder Y
-			var deathPinSRx = deathPinX-50;		//Right Shoulder X
-			var deathPinSRy = deathPinY-230;	//Right Shoulder Y
-			var deathPinALx = deathPinX+30;		//Left Ankle X
-			var deathPinALy = deathPinY+335;	//Left Ankle Y
-			var deathPinARx = deathPinX-80;		//Right Ankle X
-			var deathPinARy = deathPinY+335;	//Right Ankle Y
+		var deathPinX = canvasCenterX+75;	//Torso X
+		var deathPinY = windowHeight-325;	//Torso Y
+			var deathPinSLx = deathPinX+25;		//Left Shoulder X
+			var deathPinSLy = deathPinY-115;	//Left Shoulder Y
+			var deathPinSRx = deathPinX-25;		//Right Shoulder X
+			var deathPinSRy = deathPinY-115;	//Right Shoulder Y
+			var deathPinALx = deathPinX+15;		//Left Ankle X
+			var deathPinALy = deathPinY+167.5;	//Left Ankle Y
+			var deathPinARx = deathPinX-40;		//Right Ankle X
+			var deathPinARy = deathPinY+167.5;	//Right Ankle Y
 			var deathPinNx = deathPinX;			//Neck X
-			var deathPinNy = deathPinY-310;		//Neck Y
-			var deathPinHLx = -85;				//Left Hand X
-			var deathPinHLy = 250;				//Left Hand Y
-			var deathPinHRx = -85;				//Right Hand X
-			var deathPinHRy = 250;				//Right Hand Y
+			var deathPinNy = deathPinY-155;		//Neck Y
+			var deathPinHLx = -42.5;			//Left Hand X
+			var deathPinHLy = 125;				//Left Hand Y
+			var deathPinHRx = -42.5;			//Right Hand X
+			var deathPinHRy = 125;				//Right Hand Y
 
 			//Duck
-			var duckPinWLx = duckPinXw + 15;	//Left Wing X
-			var duckPinWLy = duckPinYw - 310;	//Left Wing Y
-			var duckPinWRx = duckPinXw + 20;	//Right Wing X
-			var duckPinWRy = duckPinYw - 300;	//Right Wing Y
-			var duckPinNx = duckPinXw + 5;		//Neck X
-			var duckPinNy = duckPinYw - 380;	//Neck Y
-			var duckPinHx = -15;				//Head X
-			var duckPinHy = -240;				//Head Y
-			var duckPinFLx = duckPinXw - 25;	//Left Foot X
-			var duckPinFLy = duckPinYw + 40;	//Left Foot Y
-			var duckPinFRx = duckPinXw + 25;	//Right Foot X
-			var duckPinFRy = duckPinYw +40;		//Right Foot Y
+			var duckPinWLx = duckPinXw + 7.5;	//Left Wing X
+			var duckPinWLy = duckPinYw - 155;	//Left Wing Y
+			var duckPinWRx = duckPinXw + 10;	//Right Wing X
+			var duckPinWRy = duckPinYw - 150;	//Right Wing Y
+			var duckPinNx = duckPinXw + 2.5;	//Neck X
+			var duckPinNy = duckPinYw - 190;	//Neck Y
+			var duckPinHx = -7.5;				//Head X
+			var duckPinHy = -120;				//Head Y
+			var duckPinFLx = duckPinXw - 12.5;	//Left Foot X
+			var duckPinFLy = duckPinYw + 20;	//Left Foot Y
+			var duckPinFRx = duckPinXw + 12.5;	//Right Foot X
+			var duckPinFRy = duckPinYw + 20;	//Right Foot Y
 
 		//Draw Characters
 			//Death =============================================================================================
@@ -244,25 +244,25 @@ function draw() {
 		rotate(deathRotAR);
 		translate(deathPinHRx,deathPinHRy);
 		rotate(deathRotHR);
-		image(death_HandImg, 0,0);	//Right Hand
+		image(death_HandImg, 0,0,400,400);	//Right Hand
 		pop();
 
 		push();
 		translate(deathPinSRx,deathPinSRy);
 		rotate(deathRotAR);
-		image(death_ArmImg, 0,0);	//Right Arm
+		image(death_ArmImg, 0,0,400,400);	//Right Arm
 		pop();
 
 		push();
 		translate(deathPinALx,deathPinALy);
 		rotate(deathRotFL);
-		image(death_FootImg, 0,0);	//Left Foot
+		image(death_FootImg, 0,0,400,400);	//Left Foot
 		pop();
 
 		push();
 		translate(deathPinARx,deathPinARy);
 		rotate(deathRotFR);
-		image(death_FootImg, 0,0);	//Right Foot
+		image(death_FootImg, 0,0,400,400);	//Right Foot
 		pop();
 
 		push();
@@ -274,7 +274,7 @@ function draw() {
 		push();
 		translate(deathPinNx,deathPinNy);
 		rotate(deathRotN);
-		image(death_HeadImg_01, 0,0);	//Head
+		image(death_HeadImg_01, 0,0,400,400);	//Head
 		pop();
 
 		push();
@@ -282,48 +282,48 @@ function draw() {
 		rotate(deathRotAL);
 		translate(deathPinHLx,deathPinHLy);
 		rotate(deathRotHL);
-		image(death_HandImg, 0,0);	//Left Hand
+		image(death_HandImg, 0,0,400,400);	//Left Hand
 		pop();
 
 		push();
 		translate(deathPinSLx,deathPinSLy);
 		rotate(deathRotAL);
-		image(death_ArmImg, 0,0);	//Left Arm
+		image(death_ArmImg, 0,0,400,400);	//Left Arm
 		pop(); 
 
 			//Duck ==============================================================================================
-		duckPinXw = canvasCenterX-150;
+		duckPinXw = canvasCenterX-75;
 		duckPinYw = windowHeight-200;
 
 		push();
 		translate(duckPinWLx,duckPinWLy);
 		rotate(duckRotWL);
-		image(duck_WingImg_02, 0,0);	//Left Wing
+		image(duck_WingImg_02, 0,0,400,400);	//Left Wing
 		pop();
 
 		push();
 		translate(duckPinFRx,duckPinFRy);
 		rotate(duckRotFR);
-		image(duck_FootLeftImg, 0,0);	//Right Foot
+		image(duck_FootLeftImg, 0,0,400,400);	//Right Foot
 		pop();
 
 		push();
 		translate(duckPinFLx,duckPinFLy);
 		rotate(duckRotFL);
-		image(duck_FootLeftImg, 0,0);	//Left Foot
+		image(duck_FootLeftImg, 0,0,400,400);	//Left Foot
 		pop();
 
 		push();
 		translate();
 		translate(duckPinXw,duckPinYw);
 		rotate(duckRot);
-		image(duck_TorsoSideImg, 0,0);	//Torso
+		image(duck_TorsoSideImg, 0,0,400,400);	//Torso
 		pop();
 
 		push();
 		translate(duckPinNx,duckPinNy);
 		rotate(duckRotN);
-		image(duck_NeckImg, 0,0);		//Neck
+		image(duck_NeckImg, 0,0,400,400);		//Neck
 		pop();
 
 		push();
@@ -331,41 +331,41 @@ function draw() {
 		rotate(duckRotN);
 		translate(duckPinHx,duckPinHy);
 		rotate(duckRotH);
-		image(duck_HeadImg, 0,0);		//Head
+		image(duck_HeadImg, 0,0,400,400);		//Head
 		pop();
 
 		push();
 		translate(duckPinWRx,duckPinWRy);
 		rotate(duckRotWR);
-		image(duck_WingImg_02, 0,0);	//Right Wing
+		image(duck_WingImg_02, 0,0,400,400);	//Right Wing
 		pop(); 
 
 		//Environment =======================================================================================
 			//Tulip
 		push();
-		translate(canvasCenterX - 350, canvasCenterY + 420);
+		translate(canvasCenterX - 150, windowHeight - 150);
 		rotate(tulipRot);
-		image(tulipImg, 0,0);
+		image(tulipImg, 0,0,400,400);
 		pop();
 		push();
-		translate(canvasCenterX - 500, canvasCenterY + 420);
+		translate(canvasCenterX - 300, windowHeight - 150);
 		rotate(tulipRot);
-		image(tulipImg, 0,0);
+		image(tulipImg, 0,0,400,400);
 		pop();
 		push();
-		translate(canvasCenterX + 365, canvasCenterY + 420);
+		translate(canvasCenterX + 165, windowHeight - 150);
 		rotate(tulipRot);
-		image(tulipImg, 0,0);
+		image(tulipImg, 0,0,400,400);
 		pop();
 		push();
-		translate(canvasCenterX + 505, canvasCenterY + 420);
+		translate(canvasCenterX + 305, windowHeight - 150);
 		rotate(tulipRot);
-		image(tulipImg, 0,0);
+		image(tulipImg, 0,0,400,400);
 		pop();
 		push();
-		translate(canvasCenterX + 450, canvasCenterY + 420);
+		translate(canvasCenterX + 250, windowHeight - 150);
 		rotate(tulipRot);
-		image(tulipImg, 0,0);
+		image(tulipImg, 0,0,400,400);
 		pop();
 
 		//Animate ===========================================================================================
