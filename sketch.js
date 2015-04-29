@@ -55,7 +55,7 @@ var tulipImg;
 var treeImg;
 var pondImg;
 
-//Scenes ====================================================================================================
+//Scenes =============================================================================================================
 var treeScene = true;
 var windScene = false;
 var snowScene = false;
@@ -76,6 +76,9 @@ var duckRotH = 0;	//Head Rotation
 var duckRotFR = 0;	//Right Foot Rotation
 var duckRotFL = 0;	//Left Foot Rotation
 var duckRot = 0;	//Torso Rotation
+		//Tree Scene
+var duckNeckRot = -10;
+var duckHeadRot = 10;
 	//Death
 		//Wind Scene
 var deathRotAR = -10;	//Right Arm Rotation
@@ -222,21 +225,61 @@ function draw() {
 		var duck_NeckLeftx = windowWidth-380;
 		var duck_NeckLefty = windowHeight-430-plxTreeY;
 
+		//Draw Tree, Pond, Duck and Death
+
 		image(pondImg, canvasCenterX - 300, windowHeight + 300 - plxTreeY, 800,500);
 		push();
 		translate(windowWidth - 280, windowHeight - 470 - plxTreeY);
-		image(death_HeadImg_05, 0,0, 400,400);
+		rotate(deathHeadRot);
+		image(death_HeadImg_05, 0,0, 400,400);	//Death Head
 		pop();
 		push();
 		translate(duck_NeckLeftx, duck_NeckLefty);
-		image(duck_NeckLeftImg, 0,0, 400,400);
+		rotate(duckNeckRot);
+		image(duck_NeckLeftImg, 0,0, 400,400);	//Duck Neck
 		pop();
 		push();
 		translate(duck_NeckLeftx,duck_NeckLefty);
+		rotate(duckNeckRot);
 		translate(7,-120);
-		image(duck_HeadLeftImg, 0,0, 400,400);
+		rotate(duckHeadRot);
+		image(duck_HeadLeftImg, 0,0, 400,400);	//Duck Head
 		pop();
 		image(treeImg, windowWidth - 300, windowHeight + 100 - plxTreeY);
+
+		//Animate Duck and Death
+			//Duck
+				//Idle Animation
+		if(duckAnimState == 0) {
+			if (duckIdleAnimPoint == duckIdleMag || duckIdleAnimPoint == 0) {
+				duckIdleDir *= -1;
+			}
+			duckNeckRot += duckIdleDir/10;	//Neck
+			duckHeadRot += duckIdleDir/10;	//Head
+
+			if (duckIdleDir == -1) {
+				duckIdleAnimPoint++;	//Animation Point
+			}
+			else if (duckIdleDir == 1) {
+				duckIdleAnimPoint--;	//Animation Point
+			}
+		}
+
+			//Death
+				//Idle Animation
+		if(deathAnimState == 0){
+			if (deathIdleAnimPoint == deathIdleMag || deathIdleAnimPoint == 0) {
+				deathIdleDir *= -1;
+			}
+			deathHeadRot += deathIdleDir/10;
+
+			if (deathIdleDir == -1) {
+				deathIdleAnimPoint++;
+			}
+			else if (deathIdleDir == 1) {
+				deathIdleAnimPoint--;
+			}
+		}
 	}
 
 	//Wind Scene
