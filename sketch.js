@@ -268,7 +268,7 @@ function draw() {
 		push();
 		translate(deathPinX,deathPinY);
 		rotate(deathRot);
-		image(death_TorsoImg, 0,0);		//Torso
+		image(death_TorsoImg, 0,0,400,400);		//Torso
 		pop();
 
 		push();
