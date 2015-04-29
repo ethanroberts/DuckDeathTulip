@@ -466,6 +466,8 @@ function draw() {
 		image(tulipImg, 0,0,400,400);
 		pop();
 
+		image(textHugScene, canvasCenterX-250,canvasCenterY-275,500,100);
+
 		//Animate ===========================================================================================
 			//Duck
 				//Idle Animation
