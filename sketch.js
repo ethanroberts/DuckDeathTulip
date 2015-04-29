@@ -55,6 +55,14 @@ var tulipImg;
 var treeImg;
 var pondImg;
 
+//Text
+var textPondScene_01;
+var textPondScene_02;
+var textTreeScene;
+var textHugScene;
+var textSnowScene_01;
+var textSnowScene_02;
+
 //Scenes =============================================================================================================
 var treeScene = true;
 var windScene = false;
@@ -191,6 +199,14 @@ function preload() {
 	tulipImg = loadImage("src/Misc/Tulip.png");
 	treeImg = loadImage("src/Misc/Tree.png");
 	pondImg = loadImage("src/Misc/Pond.png");
+
+	//Text
+	textPondScene_01 = loadImage("src/Text/text1.png");
+	textPondScene_02 = loadImage("src/Text/text2.png");
+	textTreeScene = loadImage("src/Text/text3.png");
+	textHugScene = loadImage("src/Text/text4.png");
+	textSnowScene_01 = loadImage("src/Text/text5.png");
+	textSnowScene_02 = loadImage("src/Text/text6.png");
 }
 
 function setup() {
