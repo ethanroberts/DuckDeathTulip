@@ -65,8 +65,8 @@ var textSnowScene_02;
 
 //Scenes =============================================================================================================
 var treeScene = false;
-var windScene = true;
-var snowScene = false;
+var windScene = false;
+var snowScene = true;
 
 //Transformations ====================================================================================================
 	//Canvas
@@ -541,6 +541,8 @@ function draw() {
 		image(death_SittingImg_02,canvasCenterX + plxLayerX_01,windowHeight-350); //Death
 		image(duck_DeadImg,canvasCenterX + plxLayerX_02,windowHeight-200, 800,200); //Duck
 		image(SnowFall_MotionBlurImg, canvasCenterX + plxLayerX_03-250, canvasCenterY + plxLayerY_03-250, windowWidth + 500, windowHeight + 500); //Snow_MotionBlur (Close)
+		image(textSnowScene_01, 300 + plxLayerX_01,50,500,75);
+		image(textSnowScene_02, 300 + plxLayerX_02,110,500,55);
 	}
 }
 
