@@ -52,8 +52,8 @@ var SnowFall_MotionBlurImg;
 var tulipImg;
 
 //Scenes ====================================================================================================
-var windScene = true;
-var snowScene = false;
+var windScene = false;
+var snowScene = true;
 
 //Transformations ====================================================================================================
 	//Canvas
