@@ -304,7 +304,7 @@ function draw() {
 		//Character Pin Points (For Animating Characters)
 			//Death
 		var deathPinX = canvasCenterX+75;	//Torso X
-		var deathPinY = windowHeight-325;	//Torso Y
+		var deathPinY = windowHeight-225;	//Torso Y
 			var deathPinSLx = deathPinX+25;		//Left Shoulder X
 			var deathPinSLy = deathPinY-115;	//Left Shoulder Y
 			var deathPinSRx = deathPinX-25;		//Right Shoulder X
@@ -391,7 +391,7 @@ function draw() {
 
 			//Duck ==============================================================================================
 		duckPinXw = canvasCenterX-75;
-		duckPinYw = windowHeight-200;
+		duckPinYw = windowHeight-100;
 
 		push();
 		translate(duckPinWLx,duckPinWLy);
@@ -441,27 +441,27 @@ function draw() {
 		//Environment =======================================================================================
 			//Tulip
 		push();
-		translate(canvasCenterX - 150, windowHeight - 150);
+		translate(canvasCenterX - 150, windowHeight - 50);
 		rotate(tulipRot);
 		image(tulipImg, 0,0,400,400);
 		pop();
 		push();
-		translate(canvasCenterX - 300, windowHeight - 150);
+		translate(canvasCenterX - 300, windowHeight - 50);
 		rotate(tulipRot);
 		image(tulipImg, 0,0,400,400);
 		pop();
 		push();
-		translate(canvasCenterX + 165, windowHeight - 150);
+		translate(canvasCenterX + 165, windowHeight - 50);
 		rotate(tulipRot);
 		image(tulipImg, 0,0,400,400);
 		pop();
 		push();
-		translate(canvasCenterX + 305, windowHeight - 150);
+		translate(canvasCenterX + 305, windowHeight - 50);
 		rotate(tulipRot);
 		image(tulipImg, 0,0,400,400);
 		pop();
 		push();
-		translate(canvasCenterX + 250, windowHeight - 150);
+		translate(canvasCenterX + 250, windowHeight - 50);
 		rotate(tulipRot);
 		image(tulipImg, 0,0,400,400);
 		pop();
