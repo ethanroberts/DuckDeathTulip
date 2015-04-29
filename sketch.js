@@ -215,7 +215,7 @@ function draw() {
 			}
 
 		image(pondImg, canvasCenterX - 100, windowHeight + 300 - plxTreeY);
-		image(treeImg, windowWidth - 300, windowHeight + 100 - plxTreeY);
+		image(treeImg, windowWidth - 300, windowHeight + 100 - plxTreeY, 800,600);
 	}
 
 	//Wind Scene
