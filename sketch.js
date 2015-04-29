@@ -262,6 +262,7 @@ function draw() {
 		image(duck_HeadLeftImg, 0,0, 400,400);	//Duck Head
 		pop();
 		image(treeImg, windowWidth - 300, windowHeight + 100 - plxTreeY);
+		image(textTreeScene, canvasCenterX - 200, 200 - plxTreeY, 500,100);
 
 		//Animate Duck and Death
 			//Duck
