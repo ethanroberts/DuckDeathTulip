@@ -64,8 +64,8 @@ var textSnowScene_01;
 var textSnowScene_02;
 
 //Scenes =============================================================================================================
-var treeScene = true;
-var windScene = false;
+var treeScene = false;
+var windScene = true;
 var snowScene = false;
 
 //Transformations ====================================================================================================
@@ -510,7 +510,7 @@ function draw() {
 			if (tulipIdleAnimPoint == tulipIdleMag || tulipIdleAnimPoint == 0) {
 				tulipIdleDir *= -1;
 			}
-			tulipRot += tulipIdleDir/20;
+			tulipRot += tulipIdleDir/20 + (accelerationZ*10);
 
 			if (tulipIdleDir == 1) {
 				tulipIdleAnimPoint++;
