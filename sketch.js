@@ -86,6 +86,8 @@ var deathRotHR = 0;		//Right Hand Rotation
 var deathRotFL = 0;		//Left Foot Rotation
 var deathRotFR = 0;		//Right Foot Rotation
 var deathRot = 0;		//Torso Rotation
+		//Tree Scene
+var deathHeadRot = 0;	//Head Rotation
 
 	//Environment
 var tulipRot = 0;	//Tulip Rotation
