@@ -147,7 +147,7 @@ function preload() {
 	duck_TorsoFrontImg = loadImage("src/Duck/BodyParts/Duck_Torso_Front.png");
 	duck_TorsoSideImg = loadImage("src/Duck/BodyParts/Duck_Torso_Side.png");
 	duck_NeckImg = loadImage("src/Duck/BodyParts/Duck_Neck.png");
-	duck_NeckLeftImg = loadImage("src/Duck/BodyParts/Duck_Neck_left.png");
+	duck_NeckLeftImg = loadImage("src/Duck/BodyParts/Duck_Neck_Left.png");
 	duck_HeadImg = loadImage("src/Duck/BodyParts/Duck_Head.png");
 	duck_HeadLeftImg = loadImage("src/Duck/BodyParts/Duck_Head_Left.png");
 	duck_FootLeftImg = loadImage("src/Duck/BodyParts/Duck_Foot_Left.png");
