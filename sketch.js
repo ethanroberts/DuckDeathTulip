@@ -214,7 +214,7 @@ function draw() {
 				plxTreeY = 0;
 			}
 
-		image(treeImg, windowWidth - 300, windowHeight + 100 + plxTreeY);
+		image(treeImg, windowWidth - 300, windowHeight + 100 - plxTreeY);
 	}
 
 	//Wind Scene
