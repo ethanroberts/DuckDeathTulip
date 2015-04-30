@@ -529,33 +529,58 @@ function draw() {
 
 		//Paralax Layers
 			//X Offset
-		var plxLayerX_01 = accelerationY/layer_01_xOffset*10;
-		var plxLayerX_02 = accelerationY/layer_02_xOffset*10;
-		var plxLayerX_03 = accelerationY/layer_03_xOffset*10;
-		var plxLayerX_04 = accelerationY/layer_04_xOffset*10;
+		var plxLayerX_01 = accelerationX/layer_01_xOffset*10;
+		var plxLayerX_02 = accelerationX/layer_02_xOffset*10;
+		var plxLayerX_03 = accelerationX/layer_03_xOffset*10;
+		var plxLayerX_04 = accelerationX/layer_04_xOffset*10;
 			//Y Offset
-		var plxLayerY_01 = accelerationX/layer_01_yOffset*10;
-		var plxLayerY_03 = accelerationX/layer_03_yOffset*10;
+		var plxLayerY_01 = accelerationY/layer_01_yOffset*10;
+		var plxLayerY_03 = accelerationY/layer_03_yOffset*10;
 
 		image(SnowFallImg_01, canvasCenterX + plxLayerX_04-250, canvasCenterY + plxLayerY_01-250, windowWidth + 500, windowHeight + 500); //Snow Layer 1 (Far)
 		image(death_SittingImg_02,canvasCenterX + plxLayerX_01,windowHeight-350); //Death
 		image(duck_DeadImg,canvasCenterX + plxLayerX_02,windowHeight-200, 800,200); //Duck
 		image(SnowFall_MotionBlurImg, canvasCenterX + plxLayerX_03-250, canvasCenterY + plxLayerY_03-250, windowWidth + 500, windowHeight + 500); //Snow_MotionBlur (Close)
 		image(textSnowScene_01, 300 + plxLayerX_01,50,500,75);
-		image(textSnowScene_02, 300 + plxLayerX_02,110,500,55);
+		image(textSnowScene_02, 300 + plxLayerX_01,110,500,55);
 	}
 }
 
 function touchStarted() {
+	//Tree Scene
 	if (treeScene) {
-		treeScene = false;
-		snowScene = false;
-		windScene = true;
+		if (touchX > canvasCenterX) {
+			treeScene = false;
+			snowScene = false;
+			windScene = true;
+		}
+		else if (touchX < canvasCenterX) {
+			//Go back to title page
+		}
 	}
+	//Wind Scene
 	else if (windScene)	{
-		treeScene = false;
-		windScene = false;
-		snowScene = true;
+		if (touchX > canvasCenterX) {
+			treeScene = false;
+			windScene = false;
+			snowScene = true;
+		}
+		else if (touchX < canvasCenterX) {
+			windScene = false;
+			snowScene = false;
+			treeScene = true;
+		}
+	}
+	//Snow Scene
+	else if (snowScene)	{
+		if (touchX > canvasCenterX) {
+			//go to credits
+		}
+		else if (touchX < canvasCenterX) {
+			snowScene = false;
+			treeScene = false;
+			windScene = true;
+		}
 	}
 }
 
