@@ -54,6 +54,7 @@ var SnowFall_MotionBlurImg;
 var tulipImg;
 var treeImg;
 var pondImg;
+var tutorialBG;
 
 //Text
 var textPondScene_01;
@@ -66,6 +67,7 @@ var textTitle;
 var textAuthor;
 var textGecko;
 var textTutorial;
+var textTutorialHelp;
 var textStart;
 
 //Scenes =============================================================================================================
@@ -216,6 +218,7 @@ function preload() {
 	tulipImg = loadImage("src/Misc/Tulip.png");
 	treeImg = loadImage("src/Misc/Tree.png");
 	pondImg = loadImage("src/Misc/Pond.png");
+	tutorialBG = loadImage("src/Textures/tutorialBG.png");
 
 	//Text
 	textPondScene_01 = loadImage("src/Text/text1.png");
@@ -228,6 +231,7 @@ function preload() {
 	textAuthor = loadImage("src/Text/textAuthor.png");
 	textGecko = loadImage("src/Text/textGeckoPress.png");
 	textTutorial = loadImage("src/Text/textTutorialButton.png");
+	textTutorialHelp = loadImage("src/Text/textTutorial.png");
 	textStart = loadImage("src/Text/textStart.png");
 }
 
@@ -355,7 +359,8 @@ function draw() {
 
 	//Tutorial
 	else if (tutorial) {
-
+		image(tutorialBG,canvasCenterX,canvasCenterY,windowWidth,windowHeight);
+		image(textTutorialHelp, canvasCenterX,canvasCenterY);
 	}
 
 	//Tree Scene
@@ -713,6 +718,7 @@ function touchStarted() {
 		}
 	}
 
+	//Tutorial ========================================================================================
 	else if (tutorial) {
 		windScene = false;
 		snowScene = false;
