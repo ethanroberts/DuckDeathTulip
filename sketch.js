@@ -693,9 +693,9 @@ function draw() {
 }
 
 function touchStarted() {
-	//Title Page
+	//Title Page ======================================================================================
 	if (titlePage) {
-		if(touchX < canvasCenterX-10 && touchX > canvasCenterX-190 && touchY < 260 && touchY > 230) {
+		if(touchX < canvasCenterX-10 && touchX > canvasCenterX-190 && touchY < 245 && touchY > 215) {
 			titlePage = false;
 			windScene = false;
 			snowScene = false;
@@ -703,7 +703,7 @@ function touchStarted() {
 			tutorial = true;
 			resetAnimations();
 		}
-		else if(touchX < canvasCenterX+190 && touchX > canvasCenterX+10 && touchY < 260 && touchY > 230) {
+		else if(touchX < canvasCenterX+190 && touchX > canvasCenterX+10 && touchY < 245 && touchY > 215) {
 			titlePage = false;
 			windScene = false;
 			snowScene = false;
@@ -711,6 +711,15 @@ function touchStarted() {
 			treeScene = true;
 			resetAnimations();
 		}
+	}
+
+	else if (tutorial) {
+		windScene = false;
+		snowScene = false;
+		treeScene = false;
+		tutorial = false;
+		titlePage = true;
+		resetAnimations();
 	}
 
 	//Tree Scene ======================================================================================
