@@ -356,6 +356,12 @@ function draw() {
 
 			//Duck ===============================================================================
 		push();
+		translate(duckPinWLx,duckPinWLy);
+		rotate(duckRotWL);
+		image(duck_WingImg_02, 0,0,400,400);	//Left Wing
+		pop();
+
+		push();
 		translate(duckPinNx,duckPinNy);
 		rotate(duckRotN);
 		image(duck_NeckImg, 0,0,400,400);		//Neck
@@ -404,12 +410,6 @@ function draw() {
 			//Duck ==============================================================================================
 		duckPinXw = canvasCenterX-75;
 		duckPinYw = windowHeight-100;
-
-		push();
-		translate(duckPinWLx,duckPinWLy);
-		rotate(duckRotWL);
-		image(duck_WingImg_02, 0,0,400,400);	//Left Wing
-		pop();
 
 		push();
 		translate(duckPinFRx,duckPinFRy);
@@ -506,7 +506,7 @@ function draw() {
 				duckRotN -= duckHugDir/2;
 				duckRotH -= duckHugDir/5;
 				duckRotWR += duckHugDir;
-				duckRotWL += duckHugDir/2;
+				duckRotWL += duckHugDir;
 				duckHugAnimPoint++;
 				duckPinXw++;
 			}
