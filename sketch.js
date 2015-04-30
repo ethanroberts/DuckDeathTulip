@@ -64,9 +64,9 @@ var textSnowScene_01;
 var textSnowScene_02;
 
 //Scenes =============================================================================================================
-var treeScene = false;
+var treeScene = true;
 var windScene = false;
-var snowScene = true;
+var snowScene = false;
 
 //Transformations ====================================================================================================
 	//Canvas
