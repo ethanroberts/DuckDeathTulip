@@ -116,7 +116,7 @@ var duckAnimState = 0;	//0 = Idle, 1 = Hug
 	var duckHugDir = 1;
 
 	//Death
-var deathAnimState = 0;	//0 = Idle
+var deathAnimState = 0;	//0 = Idle, 1 = Hug
 	var deathIdleMag = 63;
 	var deathIdleAnimPoint = 0;
 	var deathIdleDir = 1;
@@ -551,39 +551,61 @@ function draw() {
 }
 
 function touchStarted() {
-	//Tree Scene
+	//Tree Scene ======================================================================================
 	if (treeScene) {
 		if (touchX > pageTurnRightX) {
 			treeScene = false;
 			snowScene = false;
 			windScene = true;
+			//Reset Animations
+			duckAnimState = 0;	//Idle
+			deathAnimState = 0;	//Idle
 		}
 		else if (touchX < pageTurnLeftX) {
 			//Go back to title page
+			//Reset Animations
+			duckAnimState = 0;	//Idle
+			deathAnimState = 0;	//Idle
 		}
 	}
-	//Wind Scene
+	//Wind Scene ======================================================================================
 	else if (windScene)	{
 		if (touchX > pageTurnRightX) {
 			treeScene = false;
 			windScene = false;
 			snowScene = true;
+			//Reset Animations
+			duckAnimState = 0;	//Idle
+			deathAnimState = 0;	//Idle
 		}
 		else if (touchX < pageTurnLeftX) {
 			windScene = false;
 			snowScene = false;
 			treeScene = true;
+			//Reset Animations
+			duckAnimState = 0;	//Idle
+			deathAnimState = 0;	//Idle
+		}
+		else if (touchX < canvasCenterX+300 && touchX > canvasCenterX-300 && touchY > canvasCenterY-300) {
+			duckAnimState = 1;	//Hug
+			deathAnimState = 1;	//Hug
 		}
 	}
-	//Snow Scene
+	//Snow Scene ======================================================================================
 	else if (snowScene)	{
 		if (touchX > pageTurnRightX) {
 			//go to credits
+			//Reset Animations
+			duckAnimState = 0;	//Idle
+			deathAnimState = 0;	//Idle
 		}
 		else if (touchX < pageTurnLeftX) {
 			snowScene = false;
 			treeScene = false;
 			windScene = true;
+			//Reset Animations
+			duckAnimState = 0;	//Idle
+			deathAnimState = 0;	//Idle
 		}
 	}
 }
