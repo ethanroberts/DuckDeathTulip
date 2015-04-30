@@ -72,6 +72,8 @@ var snowScene = false;
 	//Canvas
 var canvasCenterX;
 var canvasCenterY;
+var pageTurnRightX;
+var pageTurnLeftX;
 	//Duck
 		//Wind Scene
 var duckPinXw;
@@ -219,6 +221,8 @@ function setup() {
 		//Canvas
 	canvasCenterX = windowWidth/2;
 	canvasCenterY = windowHeight/2;
+	pageTurnRightX = windowWidth-200;
+	pageTurnLeftX = 200;
 		//Duck
 			//Wind Scene
 	duckPinXw = canvasCenterX-75;
@@ -549,23 +553,23 @@ function draw() {
 function touchStarted() {
 	//Tree Scene
 	if (treeScene) {
-		if (touchX > canvasCenterX) {
+		if (touchX > pageTurnRightX) {
 			treeScene = false;
 			snowScene = false;
 			windScene = true;
 		}
-		else if (touchX < canvasCenterX) {
+		else if (touchX < pageTurnLeftX) {
 			//Go back to title page
 		}
 	}
 	//Wind Scene
 	else if (windScene)	{
-		if (touchX > canvasCenterX) {
+		if (touchX > pageTurnRightX) {
 			treeScene = false;
 			windScene = false;
 			snowScene = true;
 		}
-		else if (touchX < canvasCenterX) {
+		else if (touchX < pageTurnLeftX) {
 			windScene = false;
 			snowScene = false;
 			treeScene = true;
@@ -573,10 +577,10 @@ function touchStarted() {
 	}
 	//Snow Scene
 	else if (snowScene)	{
-		if (touchX > canvasCenterX) {
+		if (touchX > pageTurnRightX) {
 			//go to credits
 		}
-		else if (touchX < canvasCenterX) {
+		else if (touchX < pageTurnLeftX) {
 			snowScene = false;
 			treeScene = false;
 			windScene = true;
