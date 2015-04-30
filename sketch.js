@@ -546,6 +546,19 @@ function draw() {
 	}
 }
 
+function touchStarted() {
+	if (treeScene) {
+		treeScene = false;
+		snowScene = false;
+		windScene = true;
+	}
+	else if (windScene)	{
+		treeScene = false;
+		windScene = false;
+		snowScene = true;
+	}
+}
+
 function windowResized() {
 	resizeCanvas(windowWidth,windowHeight);
 	canvasCenterX = windowWidth/2;
