@@ -113,13 +113,16 @@ var duckAnimState = 0;	//0 = Idle, 1 = Hug
 	var duckIdleDir = 1;
 	var duckHugMag = 25;
 	var duckHugAnimPoint = 0;
-	var duckHugDir = 1;
+	var duckHugDir = -1;
 
 	//Death
 var deathAnimState = 0;	//0 = Idle, 1 = Hug
 	var deathIdleMag = 63;
 	var deathIdleAnimPoint = 0;
 	var deathIdleDir = 1;
+	var deathHugMag = 50;
+	var deathHugAnimPoint = 0;
+	var deathHugDir = 1;
 
 	//Tulips
 var tulipAnimState = 0; //0 = Idle, 1 = Blow Left, 2 = Blow Right
@@ -494,7 +497,7 @@ function draw() {
 
 			//Death
 				//Idle Animation
-		if(deathAnimState == 0){
+		if(deathAnimState == 0) {
 			if (deathIdleAnimPoint == deathIdleMag || deathIdleAnimPoint == 0) {
 				deathIdleDir *= -1;
 			}
@@ -507,6 +510,13 @@ function draw() {
 			}
 			else if (deathIdleDir == 1) {
 				deathIdleAnimPoint--;
+			}
+		}
+
+				//Hug Animation
+		if (deathAnimState == 1) {
+			if(deathHugAnimPoint < deathHugMag){
+				deathRotAL += deathHugDir;
 			}
 		}
 
