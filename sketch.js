@@ -677,7 +677,7 @@ function touchStarted() {
 	}
 
 	//Tree Scene ======================================================================================
-	if (treeScene) {
+	else if (treeScene) {
 		if (touchX > pageTurnRightX) {
 			treeScene = false;
 			snowScene = false;
