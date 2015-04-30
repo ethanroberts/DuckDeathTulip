@@ -662,7 +662,6 @@ function draw() {
 		image(duck_DeadImg,canvasCenterX - plxLayerX_02,windowHeight-100, 800,200); //Duck
 		image(SnowFall_MotionBlurImg, canvasCenterX - plxLayerX_03-250, canvasCenterY + plxLayerY_03-250, windowWidth + 500, windowHeight + 500); //Snow_MotionBlur (Close)
 		image(textSnowScene_01, 300 - plxLayerX_01,50,500,75);
-		image(textSnowScene_02, 300 - plxLayerX_01,110,500,55);
 	}
 }
 
