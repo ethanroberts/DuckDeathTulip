@@ -811,7 +811,7 @@ function touchStarted() {
 	}
 	//Credits =========================================================================================
 	else if (creditScene) {
-		if (touchX > pageTurnRightX) {
+		if (touchX < pageTurnLeftX) {
 			treeScene = false;
 			titlePage = false;
 			tutorial = false;
