@@ -64,7 +64,8 @@ var textSnowScene_01;
 var textSnowScene_02;
 
 //Scenes =============================================================================================================
-var treeScene = true;
+var titlePage = true;
+var treeScene = false;
 var windScene = false;
 var snowScene = false;
 
@@ -75,6 +76,9 @@ var canvasCenterY;
 var pageTurnRightX;
 var pageTurnLeftX;
 	//Duck
+		//Title Page
+var duckPinXt;
+var duckPinYt;
 		//Wind Scene
 var duckPinXw;
 var duckPinYw;
@@ -229,6 +233,9 @@ function setup() {
 	pageTurnRightX = windowWidth-200;
 	pageTurnLeftX = 200;
 		//Duck
+			//Title Page
+	duckPinXt = canvasCenterX;
+	duckPinYt = canvasCenterY+350;
 			//Wind Scene
 	duckPinXw = canvasCenterX-75;
 	duckPinYw = windowHeight-95;
@@ -241,6 +248,88 @@ function setup() {
 
 function draw() {
 	background(35,30,255);
+
+	//Title Page
+	if (titlePage) {
+		//Duck
+			var duckPinWLx = duckPinXt + 25;	//Left Wing X
+			var duckPinWLy = duckPinYt - 240;	//Left Wing Y
+			var duckPinWRx = duckPinXt + 20;	//Right Wing X
+			var duckPinWRy = duckPinYt - 230;	//Right Wing Y
+			var duckPinNx = duckPinXt + 2.5;	//Neck X
+			var duckPinNy = duckPinYt - 280;	//Neck Y
+			var duckPinHx = -14;				//Head X
+			var duckPinHy = -180;				//Head Y
+			var duckPinFLx = duckPinXt - 20;	//Left Foot X
+			var duckPinFLy = duckPinYt + 20;	//Left Foot Y
+			var duckPinFRx = duckPinXt + 12.5;	//Right Foot X
+			var duckPinFRy = duckPinYt + 20;	//Right Foot Y
+
+		//Draw the Duck ===================================================================================
+		push();
+		translate(duckPinWLx,duckPinWLy);
+		rotate(duckRotWL);
+		image(duck_WingImg_02, 0,0, 600,600);	//Left Wing
+		pop();
+
+		push();
+		translate(duckPinFRx,duckPinFRy);
+		rotate(duckRotFR);
+		image(duck_FootLeftImg, 0,0, 600,600);	//Right Foot
+		pop();
+
+		push();
+		translate(duckPinFLx,duckPinFLy);
+		rotate(duckRotFL);
+		image(duck_FootLeftImg, 0,0, 600,600);	//Left Foot
+		pop();
+
+		push();
+		translate();
+		translate(duckPinXt,duckPinYt);
+		rotate(duckRot);
+		image(duck_TorsoSideImg, 0,0, 600,600);	//Torso
+		pop();
+
+		push();
+		translate(duckPinNx,duckPinNy);
+		rotate(duckRotN);
+		image(duck_NeckImg, 0,0, 600,600);		//Neck
+		pop();
+
+		push();
+		translate(duckPinNx,duckPinNy);
+		rotate(duckRotN);
+		translate(duckPinHx,duckPinHy);
+		rotate(duckRotH);
+		image(duck_HeadImg, 0,0, 600,600);		//Head
+		pop();
+
+		push();
+		translate(duckPinWRx,duckPinWRy);
+		rotate(duckRotWR);
+		image(duck_WingImg_02, 0,0, 600,600);	//Right Wing
+		pop(); 
+
+		//Animate the Duck ================================================================================
+		if (duckAnimState == 0) {
+			if (duckIdleAnimPoint == duckIdleMag || duckIdleAnimPoint == 0) {
+				duckIdleDir *= -1;
+			}
+			duckRotN += duckIdleDir/10;	//Neck
+			duckRotH += duckIdleDir/10;	//Head
+
+			duckRotWR = accelerationZ;
+			duckRotWL = accelerationZ+5;
+
+			if (duckIdleDir == -1) {
+				duckIdleAnimPoint++;	//Animation Point
+			}
+			else if (duckIdleDir == 1) {
+				duckIdleAnimPoint--;	//Animation Point
+			}
+		}
+	}
 
 	//Tree Scene
 	if (treeScene) {
@@ -578,6 +667,15 @@ function draw() {
 }
 
 function touchStarted() {
+	//Title Page
+	if (titlePage) {
+		titlePage = false;
+		windScene = false;
+		snowScene = false;
+		treeScene = true;
+		resetAnimations();
+	}
+
 	//Tree Scene ======================================================================================
 	if (treeScene) {
 		if (touchX > pageTurnRightX) {
@@ -588,6 +686,10 @@ function touchStarted() {
 		}
 		else if (touchX < pageTurnLeftX) {
 			//Go back to title page
+			treeScene = false;
+			windScene = false;
+			snowScene = false;
+			titlePage = true;
 			resetAnimations();
 		}
 	}
