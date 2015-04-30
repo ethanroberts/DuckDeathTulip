@@ -517,6 +517,7 @@ function draw() {
 		if (deathAnimState == 1) {
 			if(deathHugAnimPoint < deathHugMag){
 				deathRotAL += deathHugDir;
+				deathRotAR += deathHugDir/2;
 				deathRotN -= deathHugDir/10;
 				deathHugAnimPoint++;
 			}
@@ -569,15 +570,11 @@ function touchStarted() {
 			treeScene = false;
 			snowScene = false;
 			windScene = true;
-			//Reset Animations
-			duckAnimState = 0;	//Idle
-			deathAnimState = 0;	//Idle
+			resetAnimations();
 		}
 		else if (touchX < pageTurnLeftX) {
 			//Go back to title page
-			//Reset Animations
-			duckAnimState = 0;	//Idle
-			deathAnimState = 0;	//Idle
+			resetAnimations();
 		}
 	}
 	//Wind Scene ======================================================================================
@@ -586,17 +583,13 @@ function touchStarted() {
 			treeScene = false;
 			windScene = false;
 			snowScene = true;
-			//Reset Animations
-			duckAnimState = 0;	//Idle
-			deathAnimState = 0;	//Idle
+			resetAnimations();
 		}
 		else if (touchX < pageTurnLeftX) {
 			windScene = false;
 			snowScene = false;
 			treeScene = true;
-			//Reset Animations
-			duckAnimState = 0;	//Idle
-			deathAnimState = 0;	//Idle
+			resetAnimations();
 		}
 		else if (touchX < canvasCenterX+300 && touchX > canvasCenterX-300 && touchY > canvasCenterY-300) {
 			duckAnimState = 1;	//Hug
@@ -607,19 +600,49 @@ function touchStarted() {
 	else if (snowScene)	{
 		if (touchX > pageTurnRightX) {
 			//go to credits
-			//Reset Animations
-			duckAnimState = 0;	//Idle
-			deathAnimState = 0;	//Idle
+			resetAnimations();
 		}
 		else if (touchX < pageTurnLeftX) {
 			snowScene = false;
 			treeScene = false;
 			windScene = true;
-			//Reset Animations
-			duckAnimState = 0;	//Idle
-			deathAnimState = 0;	//Idle
+			resetAnimations();
 		}
 	}
+}
+
+function resetAnimations() {
+	duckAnimstate = 0;
+	deathAnimState = 0;
+
+	//Duck
+		//Wind Scene
+	duckRotWR = 50;	//Right Wing Rotation
+	duckRotWL = 50;	//Left Wing Rotation
+	duckRotN = 0;	//Neck Rotation
+	duckRotH = 0;	//Head Rotation
+	duckRotFR = 0;	//Right Foot Rotation
+	duckRotFL = 0;	//Left Foot Rotation
+	duckRot = 0;	//Torso Rotation
+		//Tree Scene
+	duckNeckRot = -10;
+	duckHeadRot = 10;
+	//Death
+		//Wind Scene
+	deathRotAR = -10;	//Right Arm Rotation
+	deathRotAL = -15;	//Left Arm Rotation
+	deathRotN = 0;		//Neck Rotation
+	deathRotHL = 0;		//Left Hand Rotation
+	deathRotHR = 0;		//Right Hand Rotation
+	deathRotFL = 0;		//Left Foot Rotation
+	deathRotFR = 0;		//Right Foot Rotation
+	deathRot = 0;		//Torso Rotation
+		//Tree Scene
+	deathHeadRot = 0;	//Head Rotation
+
+	//Environment
+	tulipRot = 0;	//Tulip Rotation
+
 }
 
 function windowResized() {
