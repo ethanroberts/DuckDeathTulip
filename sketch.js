@@ -62,6 +62,9 @@ var textTreeScene;
 var textHugScene;
 var textSnowScene_01;
 var textSnowScene_02;
+var textTitle;
+var textAuthor;
+var textGecko;
 
 //Scenes =============================================================================================================
 var titlePage = true;
@@ -218,6 +221,9 @@ function preload() {
 	textHugScene = loadImage("src/Text/text4.png");
 	textSnowScene_01 = loadImage("src/Text/text5.png");
 	textSnowScene_02 = loadImage("src/Text/text6.png");
+	textTitle = loadImage("src/Text/textTitle.png");
+	textAuthor = loadImage("src/Text/textAuthor.png");
+	textGecko = loadImage("src/Text/textGeckoPress.png");
 }
 
 function setup() {
@@ -264,6 +270,11 @@ function draw() {
 			var duckPinFLy = duckPinYt + 20;	//Left Foot Y
 			var duckPinFRx = duckPinXt + 12.5;	//Right Foot X
 			var duckPinFRy = duckPinYt + 20;	//Right Foot Y
+
+		//Draw the Text ===================================================================================
+		image(textTitle, canvasCenterX, 180, 600,125);
+		image(textAuthor, canvasCenterX, 100, 500,75);
+		image(textGecko, windowWidth-175, windowHeight - 57.5, 350,50);
 
 		//Draw the Duck ===================================================================================
 		push();
