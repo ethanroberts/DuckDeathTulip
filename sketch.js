@@ -576,7 +576,7 @@ function draw() {
 		image(tulipImg, 0,0,400,400);
 		pop();
 
-		image(textHugScene, canvasCenterX-220,canvasCenterY-275,500,100);
+		image(textHugScene, 280,125,500,100);
 
 		//Animate ===========================================================================================
 			//Duck
@@ -672,7 +672,7 @@ function draw() {
 		image(death_SittingImg_02,canvasCenterX - plxLayerX_01,windowHeight-250); //Death
 		image(duck_DeadImg,canvasCenterX - plxLayerX_02,windowHeight-100, 800,200); //Duck
 		image(SnowFall_MotionBlurImg, canvasCenterX - plxLayerX_03-250, canvasCenterY + plxLayerY_03-250, windowWidth + 500, windowHeight + 500); //Snow_MotionBlur (Close)
-		image(textSnowScene_01, 300 - plxLayerX_01,50,500,75);
+		image(textSnowScene_01, 300 - plxLayerX_01,125,500,75);
 	}
 }
 
