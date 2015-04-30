@@ -65,9 +65,12 @@ var textSnowScene_02;
 var textTitle;
 var textAuthor;
 var textGecko;
+var textTutorial;
+var textStart;
 
 //Scenes =============================================================================================================
 var titlePage = true;
+var tutorial = false;
 var treeScene = false;
 var windScene = false;
 var snowScene = false;
@@ -224,6 +227,8 @@ function preload() {
 	textTitle = loadImage("src/Text/textTitle.png");
 	textAuthor = loadImage("src/Text/textAuthor.png");
 	textGecko = loadImage("src/Text/textGeckoPress.png");
+	textTutorial = loadImage("src/Text/textTutorialButton.png");
+	textStart = loadImage("src/Text/textStart.png");
 }
 
 function setup() {
@@ -275,6 +280,12 @@ function draw() {
 		image(textTitle, canvasCenterX, 180, 600,125);
 		image(textAuthor, canvasCenterX, 100, 500,75);
 		image(textGecko, windowWidth-175, windowHeight - 57.5, 350,50);
+		rectMode(CENTER);
+		fill(35,255,255);
+		rect(canvasCenterX - 100, 230, 180,30);
+		image(textTutorial, canvasCenterX - 100, 230, 350,50);
+		rect(canvasCenterX + 100, 230, 180,30);
+		image(textStart, canvasCenterX + 100, 232, 350,50);
 
 		//Draw the Duck ===================================================================================
 		push();
@@ -340,6 +351,11 @@ function draw() {
 				duckIdleAnimPoint--;	//Animation Point
 			}
 		}
+	}
+
+	//Tutorial
+	else if (tutorial) {
+
 	}
 
 	//Tree Scene
@@ -679,11 +695,22 @@ function draw() {
 function touchStarted() {
 	//Title Page
 	if (titlePage) {
-		titlePage = false;
-		windScene = false;
-		snowScene = false;
-		treeScene = true;
-		resetAnimations();
+		if(touchX < canvasCenterX-10 && touchX > canvasCenterX-190 && touchY < 260 && touchY > 230) {
+			titlePage = false;
+			windScene = false;
+			snowScene = false;
+			treeScene = false;
+			tutorial = true;
+			resetAnimations();
+		}
+		else if(touchX < canvasCenterX+190 && touchX > canvasCenterX+10 && touchY < 260 && touchY > 230) {
+			titlePage = false;
+			windScene = false;
+			snowScene = false;
+			tutorial = false;
+			treeScene = true;
+			resetAnimations();
+		}
 	}
 
 	//Tree Scene ======================================================================================
