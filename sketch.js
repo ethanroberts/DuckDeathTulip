@@ -111,7 +111,7 @@ var duckAnimState = 0;	//0 = Idle, 1 = Hug
 	var duckIdleMag = 50;
 	var duckIdleAnimPoint = 0;
 	var duckIdleDir = 1;
-	var duckHugMag = 25;
+	var duckHugMag = 50;
 	var duckHugAnimPoint = 0;
 	var duckHugDir = -1;
 
@@ -492,6 +492,16 @@ function draw() {
 			}
 			else if (duckIdleDir == 1) {
 				duckIdleAnimPoint--;	//Animation Point
+			}
+		}
+				//Hug Animation
+		if (duckAnimstate == 1) {
+			if (duckHugAnimPoint < duckHugMag) {
+				duckRotN -= duckHugDir/5;
+				duckRotH -= duckHugDir/10;
+				duckRotWR += duckHugDir;
+				duckRotWL += duckHugDir/2;
+				duckHugAnimPoint++;
 			}
 		}
 
