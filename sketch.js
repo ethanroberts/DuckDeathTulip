@@ -495,7 +495,7 @@ function draw() {
 			}
 		}
 				//Hug Animation
-		if (duckAnimstate == 1) {
+		if (duckAnimState == 1) {
 			if (duckHugAnimPoint < duckHugMag) {
 				duckRotN -= duckHugDir/5;
 				duckRotH -= duckHugDir/10;
@@ -622,7 +622,7 @@ function touchStarted() {
 }
 
 function resetAnimations() {
-	duckAnimstate = 0;
+	duckAnimState = 0;
 	deathAnimState = 0;
 	duckHugAnimPoint = 0;
 	deathHugAnimPoint = 0;
