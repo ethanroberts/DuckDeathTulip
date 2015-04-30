@@ -78,6 +78,8 @@ var pageTurnLeftX;
 		//Wind Scene
 var duckPinXw;
 var duckPinYw;
+var deathPinX;
+var deathPinY;
 
 var duckRotWR = 50;	//Right Wing Rotation
 var duckRotWL = 50;	//Left Wing Rotation
@@ -230,6 +232,8 @@ function setup() {
 			//Wind Scene
 	duckPinXw = canvasCenterX-75;
 	duckPinYw = windowHeight-200;
+	deathPinX = canvasCenterX+75;
+	deathPinY = windowHeight-225;
 
 	background(90);
 	imageMode(CENTER);
@@ -310,8 +314,6 @@ function draw() {
 	if (windScene) {
 		//Character Pin Points (For Animating Characters)
 			//Death
-		var deathPinX = canvasCenterX+75;	//Torso X
-		var deathPinY = windowHeight-225;	//Torso Y
 			var deathPinSLx = deathPinX+25;		//Left Shoulder X
 			var deathPinSLy = deathPinY-115;	//Left Shoulder Y
 			var deathPinSRx = deathPinX-25;		//Right Shoulder X
@@ -502,6 +504,7 @@ function draw() {
 				duckRotWR += duckHugDir;
 				duckRotWL += duckHugDir/2;
 				duckHugAnimPoint++;
+				duckPinXw++;
 			}
 		}
 
@@ -530,6 +533,7 @@ function draw() {
 				deathRotAR += deathHugDir/2;
 				deathRotN -= deathHugDir/10;
 				deathHugAnimPoint++;
+				deathPinX--;
 			}
 		}
 
@@ -626,6 +630,11 @@ function resetAnimations() {
 	deathAnimState = 0;
 	duckHugAnimPoint = 0;
 	deathHugAnimPoint = 0;
+
+	duckPinXw = canvasCenterX-75;
+	duckPinYw = windowHeight-200;
+	deathPinX = canvasCenterX+75;
+	deathPinY = windowHeight-225;
 
 	//Duck
 		//Wind Scene
