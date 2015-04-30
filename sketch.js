@@ -517,6 +517,7 @@ function draw() {
 		if (deathAnimState == 1) {
 			if(deathHugAnimPoint < deathHugMag){
 				deathRotAL += deathHugDir;
+				deathHugAnimPoint++;
 			}
 		}
 
