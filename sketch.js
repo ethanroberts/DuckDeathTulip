@@ -69,6 +69,7 @@ var textGecko;
 var textTutorial;
 var textTutorialHelp;
 var textStart;
+var textCredits;
 
 //Scenes =============================================================================================================
 var titlePage = true;
@@ -76,6 +77,7 @@ var tutorial = false;
 var treeScene = false;
 var windScene = false;
 var snowScene = false;
+var creditScene = false;
 
 //Transformations ====================================================================================================
 	//Canvas
@@ -233,6 +235,7 @@ function preload() {
 	textTutorial = loadImage("src/Text/textTutorialButton.png");
 	textTutorialHelp = loadImage("src/Text/textTutorial.png");
 	textStart = loadImage("src/Text/textStart.png");
+	textCredits = loadImage("src/Text/textCredits.png");
 }
 
 function setup() {
@@ -364,7 +367,7 @@ function draw() {
 	}
 
 	//Tree Scene
-	if (treeScene) {
+	else if (treeScene) {
 
 		var plxTreeY = accelerationY/layer_03_yOffset*50;
 			if(accelerationY < 0) {
@@ -432,7 +435,7 @@ function draw() {
 	}
 
 	//Wind Scene
-	if (windScene) {
+	else if (windScene) {
 		//Character Pin Points (For Animating Characters)
 			//Death
 			var deathPinSLx = deathPinX+25;		//Left Shoulder X
@@ -673,10 +676,10 @@ function draw() {
 				tulipIdleAnimPoint--;
 			}
 		}
-	}	// -/Draw
+	}
 
 	//Snow Scene
-	if (snowScene) {
+	else if (snowScene) {
 		background(135,100,100);
 
 		//Paralax Layers
@@ -695,6 +698,12 @@ function draw() {
 		image(SnowFall_MotionBlurImg, canvasCenterX - plxLayerX_03-250, canvasCenterY + plxLayerY_03-250, windowWidth + 500, windowHeight + 500); //Snow_MotionBlur (Close)
 		image(textSnowScene_01, 300 - plxLayerX_01,125,500,75);
 	}
+
+	//Credit Scene
+	else if (creditScene) {
+		image(death_SittingImg_01, windowWidth - 270, windowHeight - 270);
+		image(textCredits, canvasCenterX,canvasCenterY);
+	}
 }
 
 function touchStarted() {
@@ -705,6 +714,7 @@ function touchStarted() {
 			windScene = false;
 			snowScene = false;
 			treeScene = false;
+			creditScene = false;
 			tutorial = true;
 			resetAnimations();
 		}
@@ -713,6 +723,7 @@ function touchStarted() {
 			windScene = false;
 			snowScene = false;
 			tutorial = false;
+			creditScene = false;
 			treeScene = true;
 			resetAnimations();
 		}
@@ -724,6 +735,7 @@ function touchStarted() {
 		snowScene = false;
 		treeScene = false;
 		tutorial = false;
+		creditScene = false;
 		titlePage = true;
 		resetAnimations();
 	}
@@ -733,6 +745,9 @@ function touchStarted() {
 		if (touchX > pageTurnRightX) {
 			treeScene = false;
 			snowScene = false;
+			titlePage = false;
+			tutorial = false;
+			creditScene = false;
 			windScene = true;
 			resetAnimations();
 		}
@@ -741,6 +756,8 @@ function touchStarted() {
 			treeScene = false;
 			windScene = false;
 			snowScene = false;
+			tutorial = false;
+			creditScene = false;
 			titlePage = true;
 			resetAnimations();
 		}
@@ -750,12 +767,18 @@ function touchStarted() {
 		if (touchX > pageTurnRightX) {
 			treeScene = false;
 			windScene = false;
+			titlePage = false;
+			tutorial = false;
+			creditScene = false;
 			snowScene = true;
 			resetAnimations();
 		}
 		else if (touchX < pageTurnLeftX) {
 			windScene = false;
 			snowScene = false;
+			titlePage = false;
+			tutorial = false;
+			creditScene = false;
 			treeScene = true;
 			resetAnimations();
 		}
@@ -768,12 +791,33 @@ function touchStarted() {
 	else if (snowScene)	{
 		if (touchX > pageTurnRightX) {
 			//go to credits
+			snowScene = false;
+			treeScene = false;
+			windScene = false;
+			titlePage = false;
+			tutorial = false;
+			creditScene = true;
 			resetAnimations();
 		}
 		else if (touchX < pageTurnLeftX) {
 			snowScene = false;
 			treeScene = false;
+			titlePage = false;
+			tutorial = false;
+			creditScene = false;
 			windScene = true;
+			resetAnimations();
+		}
+	}
+	//Credits =========================================================================================
+	else if (creditScene) {
+		if (touchX > pageTurnRightX) {
+			treeScene = false;
+			titlePage = false;
+			tutorial = false;
+			creditScene = false;
+			windScene = false;
+			snowScene = true;
 			resetAnimations();
 		}
 	}
