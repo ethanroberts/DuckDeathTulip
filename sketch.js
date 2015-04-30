@@ -354,6 +354,23 @@ function draw() {
 		image(death_HandImg, 0,0,400,400);	//Right Hand
 		pop();
 
+			//Duck ===============================================================================
+		push();
+		translate(duckPinNx,duckPinNy);
+		rotate(duckRotN);
+		image(duck_NeckImg, 0,0,400,400);		//Neck
+		pop();
+
+		push();
+		translate(duckPinNx,duckPinNy);
+		rotate(duckRotN);
+		translate(duckPinHx,duckPinHy);
+		rotate(duckRotH);
+		image(duck_HeadImg, 0,0,400,400);		//Head
+		pop();
+
+			//Death =============================================================================
+
 		push();
 		translate(deathPinSRx,deathPinSRy);
 		rotate(deathRotAR);
@@ -383,20 +400,6 @@ function draw() {
 		rotate(deathRotN);
 		image(death_HeadImg_01, 0,0,400,400);	//Head
 		pop();
-
-		push();
-		translate(deathPinSLx,deathPinSLy);
-		rotate(deathRotAL);
-		translate(deathPinHLx,deathPinHLy);
-		rotate(deathRotHL);
-		image(death_HandImg, 0,0,400,400);	//Left Hand
-		pop();
-
-		push();
-		translate(deathPinSLx,deathPinSLy);
-		rotate(deathRotAL);
-		image(death_ArmImg, 0,0,400,400);	//Left Arm
-		pop(); 
 
 			//Duck ==============================================================================================
 		duckPinXw = canvasCenterX-75;
@@ -428,23 +431,24 @@ function draw() {
 		pop();
 
 		push();
-		translate(duckPinNx,duckPinNy);
-		rotate(duckRotN);
-		image(duck_NeckImg, 0,0,400,400);		//Neck
-		pop();
-
-		push();
-		translate(duckPinNx,duckPinNy);
-		rotate(duckRotN);
-		translate(duckPinHx,duckPinHy);
-		rotate(duckRotH);
-		image(duck_HeadImg, 0,0,400,400);		//Head
-		pop();
-
-		push();
 		translate(duckPinWRx,duckPinWRy);
 		rotate(duckRotWR);
 		image(duck_WingImg_02, 0,0,400,400);	//Right Wing
+		pop(); 
+
+			//Death =========================================================================
+		push();
+		translate(deathPinSLx,deathPinSLy);
+		rotate(deathRotAL);
+		translate(deathPinHLx,deathPinHLy);
+		rotate(deathRotHL);
+		image(death_HandImg, 0,0,400,400);	//Left Hand
+		pop();
+
+		push();
+		translate(deathPinSLx,deathPinSLy);
+		rotate(deathRotAL);
+		image(death_ArmImg, 0,0,400,400);	//Left Arm
 		pop(); 
 
 		//Environment =======================================================================================
@@ -499,8 +503,8 @@ function draw() {
 				//Hug Animation
 		if (duckAnimState == 1) {
 			if (duckHugAnimPoint < duckHugMag) {
-				duckRotN -= duckHugDir/5;
-				duckRotH -= duckHugDir/10;
+				duckRotN -= duckHugDir/2;
+				duckRotH -= duckHugDir/5;
 				duckRotWR += duckHugDir;
 				duckRotWL += duckHugDir/2;
 				duckHugAnimPoint++;
