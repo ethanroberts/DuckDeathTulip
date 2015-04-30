@@ -231,7 +231,7 @@ function setup() {
 		//Duck
 			//Wind Scene
 	duckPinXw = canvasCenterX-75;
-	duckPinYw = windowHeight-200;
+	duckPinYw = windowHeight-95;
 	deathPinX = canvasCenterX+75;
 	deathPinY = windowHeight-225;
 
@@ -632,7 +632,7 @@ function resetAnimations() {
 	deathHugAnimPoint = 0;
 
 	duckPinXw = canvasCenterX-75;
-	duckPinYw = windowHeight-200;
+	duckPinYw = windowHeight-95;
 	deathPinX = canvasCenterX+75;
 	deathPinY = windowHeight-225;
 
