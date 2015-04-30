@@ -408,9 +408,6 @@ function draw() {
 		pop();
 
 			//Duck ==============================================================================================
-		duckPinXw = canvasCenterX-75;
-		duckPinYw = windowHeight-100;
-
 		push();
 		translate(duckPinFRx,duckPinFRy);
 		rotate(duckRotFR);
@@ -508,7 +505,6 @@ function draw() {
 				duckRotWR += duckHugDir;
 				duckRotWL += duckHugDir;
 				duckHugAnimPoint++;
-				duckPinXw++;
 			}
 		}
 
