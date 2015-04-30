@@ -614,6 +614,8 @@ function touchStarted() {
 function resetAnimations() {
 	duckAnimstate = 0;
 	deathAnimState = 0;
+	duckHugAnimPoint = 0;
+	deathHugAnimPoint = 0;
 
 	//Duck
 		//Wind Scene
