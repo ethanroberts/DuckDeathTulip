@@ -658,7 +658,7 @@ function draw() {
 		var plxLayerY_03 = accelerationY/layer_03_yOffset*10;
 
 		image(SnowFallImg_01, canvasCenterX - plxLayerX_04-250, canvasCenterY + plxLayerY_01-250, windowWidth + 500, windowHeight + 500); //Snow Layer 1 (Far)
-		image(death_SittingImg_02,canvasCenterX - plxLayerX_01,windowHeight--250); //Death
+		image(death_SittingImg_02,canvasCenterX - plxLayerX_01,windowHeight-250); //Death
 		image(duck_DeadImg,canvasCenterX - plxLayerX_02,windowHeight-100, 800,200); //Duck
 		image(SnowFall_MotionBlurImg, canvasCenterX - plxLayerX_03-250, canvasCenterY + plxLayerY_03-250, windowWidth + 500, windowHeight + 500); //Snow_MotionBlur (Close)
 		image(textSnowScene_01, 300 - plxLayerX_01,50,500,75);
